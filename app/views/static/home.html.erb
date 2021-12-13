@@ -1,0 +1,6 @@
+<div class="uk-container">
+  <h2 class="uk-margin-large-top">Welcome to your dashboard, <span class="uk-text-primary">Dr. <%= current_doctor.name.capitalize %>.</span></h2>
+  <div class="uk-margin-large">
+    <%= link_to "Go to patients listing", patients_path, class: 'uk-button uk-button-primary uk-button-large' %>
+  </div>
+</div>

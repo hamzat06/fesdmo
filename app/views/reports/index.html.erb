@@ -1,0 +1,10 @@
+<div class="uk-container">
+  <div class="uk-text-center">
+    <h1 class="uk-h1 uk-margin-top">Reports</h1>
+    <%= link_to "New report", new_report_path, class: 'uk-button uk-button-primary' %>
+  </div>
+
+  <% @reports.each do |report| %>
+    <h2><%= report.title %></h2>
+  <% end %>
+</div>

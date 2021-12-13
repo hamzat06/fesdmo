@@ -1,0 +1,30 @@
+<%= form_with(model: @Report, class: 'uk-form-stacked patient-form', local: true) do |f| %>
+  <div class="uk-margin">
+    <%= f.label :obesity, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :obesity, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <%= f.label :degree, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.number_field :degree, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+  
+  <div class="uk-margin">
+    <%= f.label :recommendation, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_area :recommendation, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+
+  <div class="uk-margin">
+    <%= f.label :prescription, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_area :prescription, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+
+  <%= f.submit class: 'uk-button uk-form-width-large uk-button-primary' %>
+<% end %>

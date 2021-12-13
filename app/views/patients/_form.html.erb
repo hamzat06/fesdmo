@@ -1,0 +1,69 @@
+<%= form_with(model: @patient, class: 'uk-form-stacked patient-form', local: true) do |f| %>
+  <div class="uk-margin">
+    <%= f.label :surname, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :surname, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <%= f.label :other_names, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :other_names, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <%= f.label :gender, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.select(:gender, options_for_select(['Male','Female']), {:prompt => 'Select Gender'}, class: 'uk-select')%>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <%= f.label :marital_status, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.select(:marital_status, options_for_select(['Single','Married', 'Divorced']), {:prompt => 'Select Marital Status'}, class: 'uk-select')%>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <%= f.label :phone_number, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.number_field :phone_number, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <%= f.label :date_of_birth, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.date_field :date_of_birth, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <%= f.label :address, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :address, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <%= f.label :email, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.email_field :email, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <%= f.label :occupation, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :occupation, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <%= f.label :religion, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.select(:religion, options_for_select(['Christian','Muslim', 'Other']), {:prompt => 'Select Religion'}, class: 'uk-select')%>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <%= f.label :next_of_kin, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :next_of_kin, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+  <%= f.submit class: 'uk-button uk-form-width-large uk-button-primary' %>
+<% end %>

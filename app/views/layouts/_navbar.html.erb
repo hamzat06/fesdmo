@@ -1,0 +1,23 @@
+<div class="uk-background-primary uk-light">
+  <div class="uk-container uk-flex uk-flex-between">
+    <a class="uk-navbar-item uk-logo uk-text-bold">
+      FESDMO
+    </a>
+    <ul class="uk-navbar-nav">
+      <li>
+        <%= link_to "Patients", patients_path, class: 'uk-button uk-button-text' %>
+      </li>
+    </ul>
+    <% if logged_in? %>
+      <div class="uk-inline uk-margin">
+        <button class="uk-button uk-button-default">Dr. <%= current_doctor.name %></button>
+        <div uk-dropdown="animation: uk-animation-slide-bottom-small; duration: 1000">
+          <%= link_to "log out", logout_path, method: :delete, class: "uk-button uk-button-danger uk-margin uk-margin-bottom" %>
+          <span uk-icon="heart"></span>
+        </div>
+      </div>
+    <% else %>
+      <%= link_to "log in", login_path, class: "uk-button uk-button-default uk-margin uk-margin-bottom" %>
+    <% end %>
+  </div>
+</div>

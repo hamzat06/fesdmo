@@ -1,0 +1,15 @@
+<div class="uk-container">
+  <% flash.each do |name, msg| %>
+    <% if name == 'alert' %>
+      <div class="uk-alert-warning" uk-alert>
+        <a class="uk-alert-close" uk-close></a>
+        <p><%= msg %></p>
+      </div>
+    <% else %>
+     <div class="uk-alert-success" uk-alert>
+        <a class="uk-alert-close" uk-close></a>
+        <p><%= msg %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
