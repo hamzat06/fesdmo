@@ -1,4 +1,7 @@
 <div class="uk-container uk-padding">
-  <h1 class="uk-text-center">New Patient profile</h1>
+  <h1 class="uk-text-center">New Doctor profile</h1>
   <%= render "form" %>
+  <div class="uk-text-center">
+    <p class="uk-margin-right uk-margin-top uk-margin-small-bottom">Already have an account? </p> <%= link_to "Sign in here", login_path, class: 'uk-button uk-button-text uk-text-primary' %>
+  </div>
 </div>
