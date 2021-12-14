@@ -1,0 +1,10 @@
+<%= form_with(model: @doctor, class: 'uk-form-stacked patient-form', local: true) do |f| %>
+  <div class="uk-margin">
+    <%= f.label :name, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :name, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+  
+  <%= f.submit class: 'uk-button uk-form-width-large uk-button-primary' %>
+<% end %>

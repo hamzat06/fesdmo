@@ -14,11 +14,15 @@ class ReportsController < ApplicationController
   end
 
   def create
+    # @report.patient = Patient.find_by(id: params([:patient_id])
     @report = Report.new(report_params)
+    @report.doctor = current_doctor
     if @report.save
-      flash[:notice] = "report profile was successfully created!"
+      flash[:notice] = "report was successfully created!"
+      redirect_to @report
     else
-      flash[:alert] = "Error creating report profile"
+      flash[:alert] = "Error creating report"
+      render 'new'
     end
   end
 
@@ -28,16 +32,20 @@ class ReportsController < ApplicationController
   def update
     if @report.update(report_params)
       flash[:notice] = "report profile was successfully updated!"
+      redirect_to @report
     else
-      flash[:alert] = "Error updating report profile"
+      flash[:alert] = "Error updating report"
+      render 'new'
     end
   end
 
   def destroy
     if @report.destroy
       flash[:notice] = "report profile was successfully destroyed!"
+      redirect_to reports_path
     else
-      flash[:alert] = "Error destroying report profile"
+      flash[:alert] = "Error destroying report"
+      redirect_to @report
     end
   end
 
@@ -48,7 +56,7 @@ class ReportsController < ApplicationController
     end
 
     def report_params
-      params.require(:report).permit(:patient_id, :obesity, :degree, :recomendation, :prescription)
+      params.require(:report).permit(:patient_id, :obesity, :degree, :recommendation, :prescription)
     end
 
     

@@ -12,4 +12,9 @@ class Patient < ApplicationRecord
   validates_presence_of :next_of_kin
   belongs_to :doctor
   has_many :reports
+
+  def full_name
+    "#{surname} #{other_names}"
+  end
+
 end

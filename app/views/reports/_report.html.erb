@@ -1,0 +1,26 @@
+<table class="uk-table uk-table-small uk-table-divider">
+  <thead>
+    <tr>
+      <th class="uk-width-small">Patient NO.</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Recommendation</th>
+      <th>Prescription</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.patient.id %></td>
+        <td><%= report.patient.surname %> <%= report.patient.other_names %></td>
+        <td><%= report.patient.email %></td>
+        <td><%= report.recommendation %></td>
+        <td><%= report.prescription %></td>
+        <td><%= link_to "View More", report, class: "uk-button uk-button-default" %></td>
+      </tr>
+    <% end %>
+    
+  </tbody>
+</table>

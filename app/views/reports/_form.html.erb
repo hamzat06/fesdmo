@@ -1,4 +1,13 @@
-<%= form_with(model: @Report, class: 'uk-form-stacked patient-form', local: true) do |f| %>
+<%= render 'shared/errors', obj: @report %>
+<%= form_with(model: @report, class: 'uk-form-stacked patient-form', local: true) do |f| %>
+
+  <div class="uk-margin">
+    <%= f.label :patient, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.collection_select(:patient_id, Patient.order(:surname), :id, :full_name , { prompt: "Make your selection from the list below" }, class: 'uk-select uk-form-width-large' ) %>
+    </div>
+  </div>
+
   <div class="uk-margin">
     <%= f.label :obesity, class: 'uk-form-label' %>
     <div class="uk-form-controls">
@@ -9,6 +18,13 @@
     <%= f.label :degree, class: 'uk-form-label' %>
     <div class="uk-form-controls">
       <%= f.number_field :degree, class: 'uk-input uk-form-width-large' %>
+    </div>
+  </div>
+
+  <div class="uk-margin">
+    <%= f.label :extent, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_field :extent, class: 'uk-input uk-form-width-large' %>
     </div>
   </div>
   

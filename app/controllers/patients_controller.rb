@@ -16,7 +16,7 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new(patient_params)
     @patient.doctor = current_doctor
-    if @patient.save
+    if  @patient.save
       flash[:notice] = "Patient profile was successfully created!"
       redirect_to patients_path
     else
@@ -29,10 +29,13 @@ class PatientsController < ApplicationController
   end
 
   def update
+    @patient.doctor = current_doctor
     if @patient.update(patient_params)
       flash[:notice] = "Patient profile was successfully updated!"
+      redirect_to @patient
     else
       flash[:alert] = "Error updating patient profile"
+      render 'edit'
     end
   end
 

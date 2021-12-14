@@ -5,7 +5,13 @@
     </a>
     <ul class="uk-navbar-nav">
       <li>
+        <%= link_to "Doctors", doctors_path, class: 'uk-button uk-button-text' %>
+      </li>
+      <li>
         <%= link_to "Patients", patients_path, class: 'uk-button uk-button-text' %>
+      </li>
+      <li>
+        <%= link_to "Reports", reports_path, class: 'uk-button uk-button-text' %>
       </li>
     </ul>
     <% if logged_in? %>

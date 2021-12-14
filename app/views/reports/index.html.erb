@@ -1,10 +1,12 @@
 <div class="uk-container">
-  <div class="uk-text-center">
+  <div class="uk-text-center uk-margin-large-bottom">
     <h1 class="uk-h1 uk-margin-top">Reports</h1>
     <%= link_to "New report", new_report_path, class: 'uk-button uk-button-primary' %>
   </div>
-
-  <% @reports.each do |report| %>
-    <h2><%= report.title %></h2>
+  <% if @reports.count > 0 %>
+    <%= render 'report' %>
+  <% else %>
+    <h3 class="uk-text-center uk-text-primary">No Reports Yet!</h3>
+    <h5 class="uk-text-center">Create one by clicking on the <i class="uk-text-primary uk-text-bold">new report</i> button above.</h5>
   <% end %>
 </div>
